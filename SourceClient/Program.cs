@@ -1,9 +1,9 @@
 ﻿using System.Text.Json.Nodes;
-using ATLAS.Kernel.JsonEngine.AI;
-using ATLAS.Kernel.JsonEngine.Graph;
-using ATLAS.Kernel.JsonEngine.SQL;
+using KUKULCAN.Kernel.JsonEngine.AI;
+using KUKULCAN.Kernel.JsonEngine.Graph;
+using KUKULCAN.Kernel.JsonEngine.SQL;
 
-namespace ATLAS.Kernel.JsonEngine.Client;
+namespace KUKULCAN.Kernel.JsonEngine.Client;
 
 public static class Program
 {

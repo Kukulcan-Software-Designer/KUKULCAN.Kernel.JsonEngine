@@ -1,6 +1,6 @@
-# ATLAS.Kernel.JsonEngine - JSON Query, Graph & AI Engine
+# KUKULCAN.Kernel.JsonEngine - JSON Query, Graph & AI Engine
 
-**ATLAS** platform JSON processing library. Provides:
+**KUKULCAN** platform JSON processing library. Provides:
 
 - **JSON Core**: parse JSON, navigate with simplified JSONPath/dot paths, and evaluate basic conditions.
 - **SQL over JSON**: run a compact `SELECT / FROM / WHERE / ORDER BY / LIMIT` dialect over `JsonNode` arrays.
@@ -8,42 +8,39 @@
 - **Indexes**: simple, composite, and lightweight full-text in-memory indexes.
 - **AI Query pipeline**: translate simple natural language into an executable `AI QUERY` pipeline.
 
-> Current project files and namespaces are named `ATLAS.Kernel.JsonEngine`.
-> The README keeps `ATLAS.Kernel.JsonEngine` as the public library name, but code examples use the namespace that exists in source.
+> Current project files and namespaces are named `KUKULCAN.Kernel.JsonEngine`.
+> The README keeps `KUKULCAN.Kernel.JsonEngine` as the public library name, but code examples use the namespace that exists in source.
 
 ---
 
 ## Architecture
 
 ```
-ATLAS.Kernel.JsonEngine/
+KUKULCAN.Kernel.JsonEngine/
 +-- Source/
-|   +-- ATLAS.Kernel.JsonEngine/                <- Core library
-|   |   +-- JsonCore.cs                          <- JSON parsing, path navigation, typed getters, conditions
+|   +-- KUKULCAN.Kernel.JsonEngine/                 <- Core library
+|   |   +-- JsonCore.cs                             <- JSON parsing, path navigation, typed getters, conditions
 |   |   +-- SQL/
-|   |   |   +-- JsonSqlEngine.cs                 <- SQL-like query executor over JsonNode arrays
+|   |   |   +-- JsonSqlEngine.cs                    <- SQL-like query executor over JsonNode arrays
 |   |   |   +-- Interfaces/
-|   |   |       +-- IJsonSqlEngine.cs            <- Injectable SQL engine contract
+|   |   |       +-- IJsonSqlEngine.cs               <- Injectable SQL engine contract
 |   |   +-- Graph/
-|   |   |   +-- JsonGraph.cs                     <- Graph builder, BFS, DFS, path finding, PageRank
+|   |   |   +-- JsonGraph.cs                        <- Graph builder, BFS, DFS, path finding, PageRank
 |   |   |   +-- Interfaces/
-|   |   |       +-- IJsonGraph.cs                <- Injectable graph contract
+|   |   |       +-- IJsonGraph.cs                   <- Injectable graph contract
 |   |   +-- Index/
-|   |   |   +-- JsonIndexEngine.cs               <- Simple, composite, and full-text indexes
+|   |   |   +-- JsonIndexEngine.cs                  <- Simple, composite, and full-text indexes
 |   |   +-- AI/
-|   |       +-- JsonAiNl.cs                      <- Rule-based natural language to AI QUERY translator
-|   |       +-- JsonAiEngine.cs                  <- AI QUERY execution pipeline
-|   |
-|   +-- ATLAS.Kernel.JsonEngine.Benchmark/       <- BenchmarkDotNet performance harness
+|   |       +-- JsonAiNl.cs                         <- Rule-based natural language to AI QUERY translator
+|   |       +-- JsonAiEngine.cs                     <- AI QUERY execution pipeline
+|   +-- KUKULCAN.Kernel.JsonEngine.Benchmark/       <- BenchmarkDotNet performance harness
 |       +-- Benchmark.cs
 |       +-- Program.cs
-|
 +-- SourceClient/
-|   +-- ATLAS.Kernel.JsonEngine.Client.csproj   <- Console demo project
-|   +-- Program.cs                               <- End-to-end demo: JSON -> graph -> NL -> AI QUERY
-|
+|   +-- KUKULCAN.Kernel.JsonEngine.Client.csproj    <- Console demo project
+|   +-- Program.cs                                  <- End-to-end demo: JSON -> graph -> NL -> AI QUERY
 +-- Tests/
-    +-- ATLAS.Kernel.JsonEngine.Tests/           <- xUnit + Moq tests
+    +-- KUKULCAN.Kernel.JsonEngine.Tests/           <- xUnit + Moq tests
         +-- JsonCoreTests.cs
         +-- JsonGraphTests.cs
         +-- JsonAiNlTests.cs
@@ -81,22 +78,22 @@ No database, Redis, Docker, or external service is required.
 
 ```bash
 # 1. Restore dependencies
-dotnet restore ATLAS.Kernel.JsonEngine.slnx
+dotnet restore KUKULCAN.Kernel.JsonEngine.slnx
 
 # 2. Build the solution
-dotnet build ATLAS.Kernel.JsonEngine.slnx
+dotnet build KUKULCAN.Kernel.JsonEngine.slnx
 
 # 3. Run tests
-dotnet test ATLAS.Kernel.JsonEngine.slnx
+dotnet test KUKULCAN.Kernel.JsonEngine.slnx
 
 # 4. Run the console demo
-dotnet run --project SourceClient/ATLAS.Kernel.JsonEngine.Client.csproj
+dotnet run --project SourceClient/KUKULCAN.Kernel.JsonEngine.Client.csproj
 ```
 
 ### Add as a Project Reference
 
 ```bash
-dotnet add <your-project>.csproj reference Source/ATLAS.Kernel.JsonEngine/ATLAS.Kernel.JsonEngine.csproj
+dotnet add <your-project>.csproj reference Source/KUKULCAN.Kernel.JsonEngine/KUKULCAN.Kernel.JsonEngine.csproj
 ```
 
 ---
@@ -104,7 +101,7 @@ dotnet add <your-project>.csproj reference Source/ATLAS.Kernel.JsonEngine/ATLAS.
 ## Basic Usage
 
 ```csharp
-using ATLAS.Kernel.JsonEngine;
+using KUKULCAN.Kernel.JsonEngine;
 
 var root = JsonCore.Parse("""
 {
@@ -145,8 +142,8 @@ Supported path style:
 `JsonSqlEngine` executes a small SQL-like dialect over JSON arrays.
 
 ```csharp
-using ATLAS.Kernel.JsonEngine;
-using ATLAS.Kernel.JsonEngine.SQL;
+using KUKULCAN.Kernel.JsonEngine;
+using KUKULCAN.Kernel.JsonEngine.SQL;
 
 var root = JsonCore.Parse("""
 {
@@ -197,8 +194,8 @@ LIMIT 10
 `JsonGraph` builds a directed graph from JSON nodes. Each node is stored by an ID field, and edges are read from a dependency array.
 
 ```csharp
-using ATLAS.Kernel.JsonEngine;
-using ATLAS.Kernel.JsonEngine.Graph;
+using KUKULCAN.Kernel.JsonEngine;
+using KUKULCAN.Kernel.JsonEngine.Graph;
 
 var root = JsonCore.Parse("""
 {
@@ -236,8 +233,8 @@ var pageRank = graph.PageRank();
 `JsonIndexEngine` creates in-memory indexes over a `JsonArray`.
 
 ```csharp
-using ATLAS.Kernel.JsonEngine;
-using ATLAS.Kernel.JsonEngine.Index;
+using KUKULCAN.Kernel.JsonEngine;
+using KUKULCAN.Kernel.JsonEngine.Index;
 
 var items = JsonCore.JsonPath(root, "$.items")!.AsArray();
 
@@ -286,7 +283,7 @@ AI QUERY:
 `JsonAiNl.ToAiQuery(...)` is a rule-based helper that converts simple supported user text into an `AI QUERY`.
 
 ```csharp
-using ATLAS.Kernel.JsonEngine.AI;
+using KUKULCAN.Kernel.JsonEngine.AI;
 
 var aiQuery = JsonAiNl.ToAiQuery(
     "Muestrame los items caros y sus dependencias ordenadas por importancia"
@@ -310,10 +307,10 @@ The current rule set is Spanish-oriented and recognizes these patterns:
 ### End-to-End Execution
 
 ```csharp
-using ATLAS.Kernel.JsonEngine;
-using ATLAS.Kernel.JsonEngine.AI;
-using ATLAS.Kernel.JsonEngine.Graph;
-using ATLAS.Kernel.JsonEngine.SQL;
+using KUKULCAN.Kernel.JsonEngine;
+using KUKULCAN.Kernel.JsonEngine.AI;
+using KUKULCAN.Kernel.JsonEngine.Graph;
+using KUKULCAN.Kernel.JsonEngine.SQL;
 
 var root = JsonCore.Parse(jsonText)!;
 
@@ -346,13 +343,13 @@ var result = JsonAiEngine.Execute(
 Run the full test suite:
 
 ```bash
-dotnet test ATLAS.Kernel.JsonEngine.slnx
+dotnet test KUKULCAN.Kernel.JsonEngine.slnx
 ```
 
 Run only the test project:
 
 ```bash
-dotnet test Tests/ATLAS.Kernel.JsonEngine.Tests/ATLAS.Kernel.JsonEngine.Tests.csproj
+dotnet test Tests/KUKULCAN.Kernel.JsonEngine.Tests/KUKULCAN.Kernel.JsonEngine.Tests.csproj
 ```
 
 With coverage:
@@ -368,7 +365,7 @@ dotnet test --collect:"XPlat Code Coverage"
 Run BenchmarkDotNet benchmarks:
 
 ```bash
-dotnet run -c Release --project Source/ATLAS.Kernel.JsonEngine.Benchmark/ATLAS.Kernel.JsonEngine.Benchmark.csproj
+dotnet run -c Release --project Source/KUKULCAN.Kernel.JsonEngine.Benchmark/KUKULCAN.Kernel.JsonEngine.Benchmark.csproj
 ```
 
 Current benchmark coverage:
