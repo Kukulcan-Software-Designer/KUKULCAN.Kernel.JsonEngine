@@ -5,8 +5,8 @@ set -e
 BASE_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Directorios de test
-UNIT_TESTS="../ATLAS.Kernel.JsonEngine.Tests"
-INTEGRATION_TESTS="../ATLAS.Kernel.JsonEngine.Integration.Tests"
+UNIT_TESTS="../KUKULCAN.Kernel.JsonEngine.Tests"
+INTEGRATION_TESTS="../KUKULCAN.Kernel.JsonEngine.Integration.Tests"
 
 # Archivo de configuración
 RUNSETTINGS="$BASE_DIR/coverage.runsettings"
