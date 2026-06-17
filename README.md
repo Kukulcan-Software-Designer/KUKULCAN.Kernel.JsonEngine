@@ -1,4 +1,5 @@
-# KUKULCAN.Kernel.JsonEngine - JSON Query, Graph & AI Engine
+# KUKULCAN.Kernel.JsonEngine 
+## JSON Query, Graph & AI Engine
 
 **KUKULCAN** platform JSON processing library. Provides:
 
