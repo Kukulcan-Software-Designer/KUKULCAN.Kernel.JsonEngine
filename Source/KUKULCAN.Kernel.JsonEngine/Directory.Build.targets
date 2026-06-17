@@ -6,14 +6,14 @@
         <Version>$(VersionPrefix)</Version>
         <Authors>KUKULCAN Software Designer</Authors>
         <Company>KUKULCAN Software Designer</Company>
-        <Copyright>GPL 2026 Kratos Software Design</Copyright>
-        <PackageProjectUrl>https://www.kukulcan.mx/ATLAS</PackageProjectUrl>
+        <Copyright>GPL 2026 Kukulcan Software Designer</Copyright>
+        <PackageProjectUrl>https://www.kukulcan.mx/software/kerneljsonengine</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageOutputPath>$(SolutionDir)NuGet\</PackageOutputPath>
-        <PackageTags>atlas;erp;ddd;kernel;json;jsonengine;database;efcore;infrastructure</PackageTags>
+        <PackageTags>kukulkan;kernel;json;jsonengine;database;efcore;infrastructure;ai</PackageTags>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-        <RepositoryUrl>https://github.com/KUKULCAN-DEV/KUKULCAN.Kernel.JsonEngine</RepositoryUrl>
+        <RepositoryUrl>https://github.com/Kukulcan-Software-Designer/KUKULCAN.Kernel.JsonEngine</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>KUKULCAN.Kernel.JsonEngine is a lightweight class library that provides JSON serialization, deserialization, and schema-aware processing for Kukulcan Software Designer applications. 
 			It offers typed converters, configuration binding, and extension points to standardize data exchange between core services, plugins, and persistence layers. 
