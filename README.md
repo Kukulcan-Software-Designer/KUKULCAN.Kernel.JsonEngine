@@ -17,35 +17,39 @@
 
 ```
 KUKULCAN.Kernel.JsonEngine/
-+-- Source/
-|   +-- KUKULCAN.Kernel.JsonEngine/                 <- Core library
-|   |   +-- JsonCore.cs                             <- JSON parsing, path navigation, typed getters, conditions
-|   |   +-- SQL/
-|   |   |   +-- JsonSqlEngine.cs                    <- SQL-like query executor over JsonNode arrays
-|   |   |   +-- Interfaces/
-|   |   |       +-- IJsonSqlEngine.cs               <- Injectable SQL engine contract
-|   |   +-- Graph/
-|   |   |   +-- JsonGraph.cs                        <- Graph builder, BFS, DFS, path finding, PageRank
-|   |   |   +-- Interfaces/
-|   |   |       +-- IJsonGraph.cs                   <- Injectable graph contract
-|   |   +-- Index/
-|   |   |   +-- JsonIndexEngine.cs                  <- Simple, composite, and full-text indexes
-|   |   +-- AI/
-|   |       +-- JsonAiNl.cs                         <- Rule-based natural language to AI QUERY translator
-|   |       +-- JsonAiEngine.cs                     <- AI QUERY execution pipeline
-|   +-- KUKULCAN.Kernel.JsonEngine.Benchmark/       <- BenchmarkDotNet performance harness
-|       +-- Benchmark.cs
-|       +-- Program.cs
-+-- SourceClient/
-|   +-- KUKULCAN.Kernel.JsonEngine.Client.csproj    <- Console demo project
-|   +-- Program.cs                                  <- End-to-end demo: JSON -> graph -> NL -> AI QUERY
-+-- Tests/
-    +-- KUKULCAN.Kernel.JsonEngine.Tests/           <- xUnit + Moq tests
-        +-- JsonCoreTests.cs
-        +-- JsonGraphTests.cs
-        +-- JsonAiNlTests.cs
-        +-- JsonAiEngineTests.cs
-        +-- JsonAiEngineMoqTests.cs
+├─ Source/
+│   ├── KUKULCAN.Kernel.JsonEngine/                     <- Core library
+│   │   ├── JsonCore.cs                                 <- JSON parsing, path navigation, typed getters, conditions
+│   │   ├── SQL/
+│   │   │   ├── JsonSqlEngine.cs                        <- SQL-like query executor over JsonNode arrays
+│   │   │   └── Interfaces/
+│   │   │       └── IJsonSqlEngine.cs                   <- Injectable SQL engine contract
+│   │   ├── Graph/
+│   │   │   ├─ JsonGraph.cs                             <- Graph builder, BFS, DFS, path finding, PageRank
+│   │   │   └── Interfaces/
+│   │   │       └── IJsonGraph.cs                       <- Injectable graph contract
+│   │   ├── Index/
+│   │   │   └── JsonIndexEngine.cs                      <- Simple, composite, and full-text indexes
+│   │   └── AI/
+│   │       ├── JsonAiNl.cs                             <- Rule-based natural language to AI QUERY translator
+│   │       └── JsonAiEngine.cs                         <- AI QUERY execution pipeline
+│   └── KUKULCAN.Kernel.JsonEngine.Benchmark/           <- BenchmarkDotNet performance harness
+│       ├── Benchmark.cs
+│       └── Program.cs
+├── SourceClient/
+│   ├── KUKULCAN.Kernel.JsonEngine.Client.csproj        <- Console demo project
+│   └── Program.cs                                      <- End-to-end demo: JSON -> graph -> NL -> AI QUERY
+└── Tests/
+    ├── KUKULCAN.Kernel.JsonEngine.Tests/               <- xUnit + Moq tests
+    │   ├── JsonCoreTests.cs
+    │   ├── JsonGraphTests.cs
+    │   ├── JsonAiNlTests.cs
+    │   ├── JsonAiEngineTests.cs
+    │   └── JsonAiEngineMoqTests.cs
+    └── KUKULCAN.Kernel.JsonEngine.Integration.Tests/   <- Integration Test
+        ├── JsonAiEngineIntegrationFuzzingTests.cs
+        ├── JsonAiEngineIntegrationTests.cs
+        └── JsonGraphIntegrationTests.cs
 ```
 
 ### Applied Design Principles
