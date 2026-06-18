@@ -13,6 +13,12 @@
         <PackageTags>kukulcan;kernel;json;jsonengine;database;efcore;infrastructure;ai</PackageTags>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <PackageReleaseNotes>
+            This revision corrects the following:
+
+            - Spelling errors related to the URL where the class library is located.
+            - Spelling errors in the organization name.
+        </PackageReleaseNotes>
         <RepositoryUrl>https://github.com/Kukulcan-Software-Designer/KUKULCAN.Kernel.JsonEngine</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>KUKULCAN.Kernel.JsonEngine is a lightweight class library that provides JSON serialization, deserialization, and schema-aware processing for Kukulcan Software Designer applications.
